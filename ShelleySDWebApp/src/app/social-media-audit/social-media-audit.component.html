@@ -1,0 +1,187 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="ssd-right">
+          <img src="assets/img/Logo-white-medium.png" alt="Shelley Software Development Logo" class="img-fluid">
+          <p class="lead">
+            Partner
+            <br>
+            With
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <a href="https://www.socialbullmedia.com.au" target="_blank">
+          <img src="assets/img/socialbull-media.png" alt="Socialbull Media Logo" class="img-fluid">
+          <p class="lead">Social Media Marketing</p>
+        </a>
+      </div>
+      <div class="col-md-12">
+        <h1 class="text-center text-success">Free Social Madia Audit</h1>
+      </div>
+    </div>
+    
+  </div>
+</header>
+
+<div class="container">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+    <li class="breadcrumb-item active">Free Social Madia Audit</li>
+  </ol>
+</div>
+
+<div class="container">
+  <form class="form-free" [formGroup]="auditForm" (ngSubmit)="submitAudit()">
+    <p class="text-center lead">Are you running short of ideas and struggle to capture more followers?</p>
+    <p class="text-center text-info">Please Complete the Following:</p>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="txtFirstName">First Name</label>
+              <input type="text" class="form-control" id="txtFirstName" placeholder="Enter First Name" formControlName="firstName">
+              <p class="text-danger" *ngIf="!auditForm.controls['firstName'].valid && auditForm.controls['firstName'].touched">First Name is Required!</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="txtSurname">Surname</label>
+              <input type="text" class="form-control" id="txtSurname" placeholder="Enter Surname" formControlName="surname">
+              <p class="text-danger" *ngIf="!auditForm.controls['surname'].valid && auditForm.controls['surname'].touched">Surname is Required!</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="txtEmail">Email Address</label>
+          <input type="email" class="form-control" id="txtEmail" placeholder="Enter Email Address" formControlName="email">
+          <div *ngIf="auditForm.get('email').touched && auditForm.get('email').invalid" class="text-danger">
+              <p *ngIf="auditForm.controls['email'].errors.required">Email is required</p>
+              <p *ngIf="auditForm.controls['email'].errors.email">This email is not a valid email address</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="txtNumber">Contact Number</label>
+          <input type="text" class="form-control" id="txtNumber" placeholder="Enter Contact Number" formControlName="number">
+          <p class="text-danger" *ngIf="!auditForm.controls['number'].valid && auditForm.controls['number'].touched">Number Name is Required!</p>
+        </div>
+        <div class="form-group">
+          <label for="txtBusiness">Searchable Business Name</label>
+          <input type="text" class="form-control" id="txtBusiness" placeholder="Enter Business Name" formControlName="businessName">
+          <p class="text-danger" *ngIf="!auditForm.controls['businessName'].valid && auditForm.controls['businessName'].touched">Business Name is Required!</p>
+        </div>
+        <div class="form-group">
+          <label for="sltNature">Nature of the Business?</label>
+          <select class="form-control" id="sltNature" formControlName="nature">
+            <option>Services</option>
+            <option>Product Sales</option>
+            <option>Application</option>
+            <option>Online Service</option>
+            <option>Online Sales</option>
+            <option>Other</option>
+          </select>
+          <p class="text-danger" *ngIf="!auditForm.controls['nature'].valid && auditForm.controls['nature'].touched">Nature of the Business is Required!</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <label>Select one platform you wish to have reviewed most?</label>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="platform" id="platform1" formControlName="platform" value="Facebook">
+              Facebook
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="platform" id="platform2" formControlName="platform" value="Instagram">
+              Instagram
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="platform" id="platform3" formControlName="platform" value="LinkedIn">
+              LinkedIn
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="platform" id="platform4" formControlName="platform" value="Twitter">
+              Twitter
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="platform" id="platform5" formControlName="platform" value="Tumblr">
+              Tumblr
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="platform" id="platform6" formControlName="platform" value="Google Plus">
+              Google Plus
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="platform" id="platform7" formControlName="platform" value="YouTube">
+              YouTube
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="platform" id="platform8" formControlName="platform" value="Pintrest">
+              Pintrest
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Where do you spend most of your advertising money?</label>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" id="spend1" formControlName="spend" value="Newspapers">
+              Newspapers
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" id="spend2" formControlName="spend" value="SEO">
+              SEO
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" id="spend3" formControlName="spend" value="Google AdWords">
+              Google AdWords
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" id="spend4" formControlName="spend" value="Online pages">
+              Online pages (yelp, true local etc.)
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" id="spend5" formControlName="spend" value="Social media">
+              Social media
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>By agreeing below to have your details reviewed and that <a href="https://www.socialbullmedia.com.au" target="_blank">Social Bull Media</a> or we may contact you to discuss.</label>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="true" formControlName="agree">
+          I Agree
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="auditForm.invalid || auditForm.value.agree === false">Submit</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="reset()">Reset</button>
+  </form>
+</div>

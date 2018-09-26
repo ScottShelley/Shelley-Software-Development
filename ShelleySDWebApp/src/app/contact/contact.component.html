@@ -1,0 +1,73 @@
+<section class="section-contact" id="id-contact">
+  <div class="">
+    <h2 class="text-center">Contact Us!</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <form (ngSubmit)="send()" #f="ngForm" [formGroup]="contactform" [@formState]="state">
+        <div class="form-group">
+            <label for="txtName" class="col-form-label">Name</label>
+            <input type="text" class="form-control" id="txtName" placeholder="Full Name" formControlName="name">
+            <span *ngIf="contactform.get('name').touched && contactform.get('name').invalid" class="text-danger">Name is required</span>
+        </div>
+        <div class="form-group">
+            <label for="txtEmail" class="col-form-label">Email</label>
+            <input type="email" class="form-control" id="txtEmail" placeholder="Email" formControlName="email">
+            <div *ngIf="contactform.get('email').touched && contactform.get('email').invalid" class="text-danger">
+                <p *ngIf="contactform.get('email').errors.required">Email is required</p>
+                <p *ngIf="contactform.get('email').errors.email">This email is not a valid email address</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txtPhone" class="col-form-label">Phone Number</label>
+            <input type="text" class="form-control" id="txtPhone" placeholder="Phone Number" formControlName="phone">
+            <div *ngIf="contactform.get('phone').touched && contactform.get('phone').invalid" class="text-danger">
+              <p *ngIf="contactform.get('phone').errors.required">Phone is required</p>
+              <p *ngIf="contactform.get('phone').errors.minlength">Phone should be minimum 8 number</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txtsubject" class="col-form-label">Subject</label>
+            <input type="text" class="form-control" id="txsubject" placeholder="Subject" formControlName="subject">
+            <span *ngIf="contactform.get('subject').touched && contactform.get('subject').invalid" class="text-danger">Subject is required</span>
+        </div>
+        <div class="form-group">
+            <label for="txtMessage" class="col-form-label">Message Contexts</label>
+            <textarea class="form-control" id="txtMessage" rows="4" formControlName="message"></textarea>
+            <div *ngIf="contactform.get('message').touched && contactform.get('message').invalid" class="text-danger">
+              <p *ngIf="contactform.get('message').errors.required">Message is required</p>
+              <p *ngIf="contactform.get('message').errors.minlength">Message should be minimum 5 characters</p>
+            </div>
+        </div>
+        <!--<div class="form-group">
+          <label for="file" class="col-form-label">Attachment</label>
+          <br>
+          <label class="custom-file">
+            <input type="file" id="file" class="custom-file-input" (change)="handleFile($event)">
+            <span class="custom-file-control"></span>
+          </label>
+        </div>
+        <div class="form-group">
+          <p>{{fileName}}</p>
+        </div>-->
+        <div class="form-group button-group">
+          <button type="submit" class="btn btn-primary" [disabled]="!contactform.valid">Submit</button>
+          <button type="button" class="btn" (click)="reset()">Reset</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-4" [@contextState]="state">
+        <h3>Location</h3>
+        <p>Based in Sydney. We work for clients all over Sydney including across Australia.</p>
+        <!-- I am more than willing to meet with you in Sydney or Hawkesbury area for a chat. We can either chat over Skype or another video conference. -->
+        <h3>Details</h3>
+        <p>Email: scott@shelleysoftdev.com.au</p>
+        <p>Pone Number: 0400 907 747</p>
+        <p>Skype: ss100103</p>
+    </div>
+  </div>
+    
+</section>
+
+
+

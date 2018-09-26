@@ -1,0 +1,36 @@
+<section class="section-cloud">
+  <h2 class="text-center">Cloud Development</h2>
+  <div class="row">
+    <div class="col-lg-8">
+      <img src="assets/img/Cloud.jpg" alt="Image of cloud infrastructure diagram" [@cloudState]="state">
+    </div>
+    <div class="col-lg-4" [@azureState]="state">
+      <h3 class="text-center">Azure App Service</h3>
+      <img class="img-fluid" src="assets/img/Azure-App-Service.png" alt="Azure App Services image">
+      <p>Quickly build, deploy and scale enterprise-grade web, mobile and API apps running on any platform. Meet rigorous performance, scalability, security and compliance requirements while using a fully managed platform to perform infrastructure maintenance.</p>
+      <p class="text-center"><a href="https://azure.microsoft.com/en-au/services/" target="_blank">More about Azure Services</a></p>
+    </div>
+  </div>
+  <h3 class="text-center">AWS</h3>
+  <div class="row">
+    <div class="col-lg-6" *ngIf="isAwsImg; else elseBlock" (click)="isAwsImg =! isAwsImg">
+      <p class="text-center text-info">Click Image below to change!</p>
+      <img class="img-fluid" src="assets/img/AWS-Architectural.png" alt="Image of AWS Architectural" @awsImgState>
+    </div>
+    <ng-template #elseBlock>
+      <div class="col-lg-6" (click)="isAwsImg =! isAwsImg">
+        <p class="text-center text-info">Click Image below to change!</p>
+        <img class="img-fluid" src="assets/img/AWS-Services.png" alt="Image of AWS Services" @awsImgState>
+      </div>
+    </ng-template>
+    <div class="col-lg-6" [@awsState]="state">
+      <p><strong>Amazon S3</strong> – Object storage built to store and retrieve any amount of data from anywhere.</p>
+      <p><strong>Amazon API Gateway</strong> – API's that acts as a “front door” for applications to access data, business logic, or functionality from your back-end services.</p>
+      <p><strong>Amazon Lambda</strong> – Run code without thinking about servers. You pay only for the compute time you consume - there is no charge when your code is not running.</p>
+      <p><strong>Amazon DynamoDB</strong> – Fast and flexible NoSQL database service for any scale.</p>
+      <p><strong>Amazon Cognito</strong> – Add user authenication, sign-up, sign-in, and data synchronization to your app.</p>
+      <p><strong>Amazon Route 53</strong> – Highly scalable cloud Domain Name System (DNS) web service.</p>
+      <p><strong>Amazon Cloudfront</strong> – Highly secure global content delivery network (CDN)</p>
+    </div>
+  </div>
+</section>

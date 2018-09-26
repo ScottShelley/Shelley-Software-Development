@@ -1,0 +1,29 @@
+:host header {
+    padding-top: 3%;
+}
+
+.ssd-right {
+    float: right;
+    display: inline-flex;
+}
+
+.ssd-right p {
+    padding-top: 6%;
+}
+
+.form-free {
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+@media (max-width: 960px) {
+    .ssd-right {
+        float: none;
+        display: block;
+    }
+    
+    .ssd-right p {
+        padding-top: 0;
+        text-align: center;
+    }
+}

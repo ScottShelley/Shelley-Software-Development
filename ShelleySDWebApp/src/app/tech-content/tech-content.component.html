@@ -1,0 +1,68 @@
+<article class="container">
+  <h2 class="text-center">Framework</h2>
+  <p class="text-center">In computer programming, a software framework is an abstraction in which software providing generic functionality can be selectively changed by additional user-written code, thus providing application-specific software. A software framework provides a standard way to build and deploy applications. A software framework is a universal, reusable software environment that provides particular functionality as part of a larger software platform to facilitate the development of software applications, products, and solutions. Software frameworks may include support programs, compilers, code libraries, toolsets, and application programming interfaces (APIs) that bring together all the different components to enable development of a project or system.</p>
+  <div class="loading-bar" *ngIf="!progress.framework">
+    <div class="loading-bar-element">
+    </div>
+  </div>
+  <div class="alert alert-danger tech-error" *ngIf="error" @itemState>
+    <p class="text-center">Something went wrong :(</p>
+  </div>
+  <div class="row tech-text" *ngFor="let tec of displayedTech.framework; let i = index" @itemState (@itemState.done)="onFrameworkAnimated($event, i)">
+    <div class="col-lg-4">
+      <p class="lead">{{tec.tittle}}</p>
+      <p><a [href]="tec.link" target="_blank">{{tec.link}}</a></p>
+    </div>
+    <div class="col-lg-6">
+      <p>{{tec.description}}</p>
+    </div>
+    <div class="col-lg-2">
+      <a [href]="tec.link" target="_blank"><img [src]="tec.imgSrc" [alt]="tec.alt"></a>
+    </div>
+  </div>
+
+  <h2 class="text-center">The Cloud</h2>
+  <p class="text-center">Cloud Platform / Cloud Computing / Web Services are the hardware and operating environment of a server in an Internet-based datacenter. The system software components of (OS, virtual machine monitor, etc.) are called the 'Cloud Stack.'. The software infrastructure for a cloud computing service, which includes applications that let users create and manage their own accounts.</p>
+  <div class="loading-bar" *ngIf="!progress.cloud">
+    <div class="loading-bar-element">
+    </div>
+  </div>
+  <div class="alert alert-danger tech-error" *ngIf="error" @itemState>
+    <p class="text-center">Something went wrong :(</p>
+  </div>
+  <div class="row tech-text" *ngFor="let tec of displayedTech.cloud; let i = index" @itemState (@itemState.done)="onCloudAnimated($event, i)">
+    <div class="col-lg-4">
+        <p class="lead">{{tec.tittle}}</p>
+        <p><a [href]="tec.link" target="_blank">{{tec.link}}</a></p>
+    </div>
+    <div class="col-lg-6">
+      <p>{{tec.description}}</p>
+    </div>
+    <div class="col-lg-2">
+      <a [href]="tec.link" target="_blank"><img [src]="tec.imgSrc" [alt]="tec.alt"></a>
+    </div>
+  </div>
+
+  <h2 class="text-center">Database Backend</h2>
+  <p class="text-center">A database is a collection of information that is organized so that it can be easily accessed, managed and updated. <br> Data is organized into rows, columns and tables, and it is indexed to make it easier to find relevant information. Data gets updated, expanded and deleted as new information is added. Databases process workloads to create and update themselves, querying the data they contain and running applications against it.</p>
+  <div class="loading-bar" *ngIf="!progress.database">
+    <div class="loading-bar-element">
+    </div>
+  </div>
+  <div class="alert alert-danger tech-error" *ngIf="error" @itemState>
+    <p class="text-center">Something went wrong :(</p>
+  </div>
+  <div class="row tech-text" *ngFor="let tec of displayedTech.database; let i = index" @itemState (@itemState.done)="onDatabaseAnimated($event, i)">
+    <div class="col-lg-4">
+        <p class="lead">{{tec.tittle}}</p>
+        <p><a [href]="tec.link" target="_blank">{{tec.link}}</a></p>
+    </div>
+    <div class="col-lg-6">
+      <p>{{tec.description}}</p>
+    </div>
+    <div class="col-lg-2">
+      <a [href]="tec.link" target="_blank"><img [src]="tec.imgSrc" [alt]="tec.alt"></a>
+    </div>
+  </div>
+  <button type="button" class="btn btn-outline-primary btn-lg btn-block" (click)="service.isTechnology = !service.isTechnology">Click here to hide Technology</button>
+</article>

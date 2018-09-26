@@ -1,0 +1,119 @@
+:host > * {
+    background-color: rgb(204, 204, 204);
+}
+
+/* img {
+    width: 40%;
+} */
+
+img {
+    width: 100%;
+}
+
+.tech-text{
+    padding-top: 3%;
+}
+
+.loading-bar {
+    width: 200px;
+    height: 20px;
+    border: 1px solid black;
+    margin: auto;
+    box-sizing: content-box;
+}
+
+.loading-bar-element {
+    width: 0;
+    height: 20px;
+    background-color: deepskyblue;
+    animation: loading 1s ease-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.tech-error {
+    width: 50%;
+    margin: auto;
+}
+
+@media (max-width: 576px) {
+    .tech-error {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+/* .technology {
+    height: 300px;
+    background-color: #18bc9c;
+    border-radius: 5px;
+    border: 2px solid #000;
+}
+
+.technology h3 {
+    margin-top: 3%;
+} */
+
+.tech-box {
+    width: 75%;
+    height: 80%;
+    border: 5px dashed red;
+    margin: auto;
+    animation: click-me 5s linear infinite;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* :host .tech-box h2 {
+} */
+
+/* :host .tech-box h2 i {
+    animation: click-me-colour 5s linear infinite;
+    color: red;
+} */
+
+@keyframes click-me {
+    0% {
+        border: 5px dashed blue;
+    }
+    50% {
+        border: 5px dashed yellow;
+    }
+    100% {
+        border: 5px dashed red;
+    }
+}
+
+/* @keyframes click-me-colour {
+    0% {
+        color: blue;
+    }
+    50% {
+        color: yellow;
+    }
+    100% {
+        color: red;
+    }
+} */
+
+.section-tech {
+    margin-top: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+/* 
+.section-tech div {
+    margin-top: 3%;
+} */
+
+.btn-block {
+    margin-top: 1em;
+}

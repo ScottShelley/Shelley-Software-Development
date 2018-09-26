@@ -1,0 +1,90 @@
+
+
+:host  h1 {
+    display: inline-block;
+    /* padding: 4px; */
+    /* border: 3px double rgba(0, 0, 0, 0.24);
+    border-radius: 5px; */
+}
+
+.my-profile-img {
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+.section-contact {
+    margin-top: 20px;
+    padding: 1%;
+}
+
+.section-info {
+    margin-top: 5%;
+}
+
+/* .section-info .col-lg-4:hover,
+.section-info .col-lg-4:focus {
+    border: 1px solid #000;
+} */
+
+.move-down {
+    padding-top: 50px; 
+}
+
+header {
+    color: #fff;
+}
+
+.head-color {
+    background-color: #2B3E50;
+    border: 2px solid #005C14;
+    border-radius: 10px;
+}
+
+
+
+.section-socalbull-media .col-lg-4 {
+    padding: 3%;
+    color: #fff;
+    background: rgba(35, 35, 35, 0.95);
+}
+
+.free-img {
+    width: 100%;
+    /* border-radius: 10%; */
+}
+
+header {
+    padding-bottom: 2%;
+}
+
+.services-paragraph {
+    display: block;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-team {
+    margin-top: 3%;
+}
+
+.section-team ul li {
+    list-style: upper-roman;
+}
+
+@media (max-width: 960px) {
+    .services-paragraph {
+        width: 100%;
+        text-align: center;
+    }
+
+    .display-small-none {
+        display: none;
+    }
+}
+
+.linked-in {
+    padding-top: 1%;
+}

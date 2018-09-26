@@ -1,0 +1,17 @@
+.section-form {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.section-form .row {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.formImg {
+    height: 100px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

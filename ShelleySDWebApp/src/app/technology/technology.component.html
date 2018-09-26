@@ -1,0 +1,38 @@
+<section class="section-tech" id="id-technology">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card_img">
+            <img src="assets/img/laptop-3190194_1920.jpg" alt="Image of Technology">
+            <div class="hover-overlay effect-scale">
+              <div class="img_overlay-container">
+                <div class="img_overlay-icon">
+                  <button type="button" class="btn btn-outline-warning" (click)="service.isTechnology = !service.isTechnology">View Technologys</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 text-center">
+        <h2>Technology</h2>        
+        <hr>
+        <p class="lead">Click here to see Technology We use.</p>
+        <button type="button" class="btn btn-primary" (click)="service.isTechnology = !service.isTechnology">View Technologys</button>
+      </div>
+    </div>
+  </div>
+  <app-tech-content *ngIf="service.isTechnology" @slideTech></app-tech-content>
+</section>
+
+
+
+
+
+
+
+
+
+
+

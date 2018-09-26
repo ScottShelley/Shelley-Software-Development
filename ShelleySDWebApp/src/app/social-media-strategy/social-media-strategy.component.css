@@ -1,0 +1,20 @@
+.ssd-right {
+    float: right;
+    display: inline-flex;
+}
+
+.ssd-right p {
+    padding-top: 6%;
+}
+
+@media (max-width: 960px) {
+    .ssd-right {
+        float: none;
+        display: block;
+    }
+    
+    .ssd-right p {
+        padding-top: 0;
+        text-align: center;
+    }
+}

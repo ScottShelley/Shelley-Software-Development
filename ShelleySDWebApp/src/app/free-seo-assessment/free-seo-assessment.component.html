@@ -1,0 +1,79 @@
+<header>
+  <div class="container">
+    
+    <img src="assets/img/seo-2.jpg" alt="Search Engine Optimization Image" class="img-fluid">
+  </div>
+</header>
+
+<div class="container">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+    <li class="breadcrumb-item active">Free SEO Assessment</li>
+  </ol>
+</div>
+
+<section>
+  <h1 class="text-center text-success">Free SEO Assessment</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h3 class="text-center">SEO Assessment Form</h3>
+        <p class="text-center text-info">Please Complete the Following</p>
+        <form [formGroup]="seoForm" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label for="txtFirstName">First Name</label>
+            <input type="text" class="form-control" id="txtFirstName" placeholder="Enter First Name" formControlName="firstName">
+            <p class="text-danger" *ngIf="!seoForm.controls['firstName'].valid && seoForm.controls['firstName'].touched">First Name is Required!</p>
+          </div>
+          <div class="form-group">
+            <label for="txtSurname">Surname</label>
+            <input type="text" class="form-control" id="txtSurname" placeholder="Enter Surname" formControlName="surname">
+            <p class="text-danger" *ngIf="!seoForm.controls['surname'].valid && seoForm.controls['surname'].touched">Surname is Required!</p>
+          </div>
+          <div class="form-group">
+            <label for="txtEmail">Email Address</label>
+            <input type="email" class="form-control" id="txtEmail" placeholder="Enter Email Address" formControlName="email">
+            <div *ngIf="seoForm.get('email').touched && seoForm.get('email').invalid" class="text-danger">
+                <p *ngIf="seoForm.controls['email'].errors.required">Email is required</p>
+                <p *ngIf="seoForm.controls['email'].errors.email">This email is not a valid email address</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="txtNumber">Contact Number</label>
+            <input type="text" class="form-control" id="txtNumber" placeholder="Enter Contact Number" formControlName="number">
+            <p class="text-danger" *ngIf="!seoForm.controls['number'].valid && seoForm.controls['number'].touched">Number Name is Required!</p>
+          </div>
+          <div class="form-group">
+            <label for="txtBusiness">Business Name</label>
+            <input type="text" class="form-control" id="txtBusiness" placeholder="Enter Business Name" formControlName="businessName">
+            <p class="text-danger" *ngIf="!seoForm.controls['businessName'].valid && seoForm.controls['businessName'].touched">Business Name is Required!</p>
+          </div>
+          <div class="form-group">
+            <label for="txtURL">Website URL</label>
+            <input type="text" class="form-control" id="txtURL" placeholder="Enter Website URL" formControlName="websiteURL">
+            <p class="text-danger" *ngIf="!seoForm.controls['websiteURL'].valid && seoForm.controls['websiteURL'].touched">Website URL is Required!</p>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="seoForm.invalid || seoForm.value.agree === false">Submit</button>
+          <button type="button" class="btn btn-outline-secondary" (click)="reset()">Reset</button>
+        </form>
+      </div>
+      <div class="col-lg-6">
+        <h4>Some SEO Facts</h4>
+        <ol>
+          <li>Duplicate Content Won’t Get You Penalized</li>
+          <li>Not All Search Engines Use Links as a Ranking Factor </li>
+          <li>Google+ Is the Highest Correlated Social Factor for Rankings</li>
+          <li>Rich Snippets Have No Direct Impact on Your Rankings</li>
+          <li>Only 2 of the Top 10 Most Popular Sites Are Content Sites</li>
+          <li>Object Detection in Images is a Strong Ranking Signal</li>
+          <li>Google Has Search Evaluators to Determine the Quality of Results</li>
+          <li>A Video on Your Homepage Will Double the Chances to Show up on Page 1 of Google</li>
+          <li>Travel Time Is a Metric for Google’s Ranking</li>
+          <li>Google Ranks Events Based upon Popularity</li>
+        </ol>
+        <p class="text-center lead">What is SEO</p>
+        <iframe style="width: 100%;" height="315" src="https://www.youtube.com/embed/hF515-0Tduk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
